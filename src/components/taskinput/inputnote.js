@@ -1,9 +1,8 @@
 import React from "react";
 import Button from "react-bootstrap/Button";
-import { userContext } from "../../App";
 
 import axios from "axios";
-import { useState, useContext } from "react";
+import { useState } from "react";
 
 const Inputnote = (props) => {
   const [Title, setTitle] = useState("");

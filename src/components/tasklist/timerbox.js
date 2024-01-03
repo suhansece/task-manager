@@ -1,7 +1,5 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect } from "react";
 import Button from "react-bootstrap/Button";
-import axios from "axios";
-import { userContext } from "../../App";
 
 const Timerbox = (props) => {
   const [task, setTasks] = useState(props.taskdata);
@@ -11,16 +9,11 @@ const Timerbox = (props) => {
   const [taskhour, setTaskhour] = useState(
     Number(props.taskdata.details.slice(0, 2)) || 0
   );
-  const [, , setNotification] = useContext(userContext);
 
   const [disable, setDisable] = useState(props.disable);
 
 
-  const updateTask = async (currentstatus) => {
-    await axios.patch(`/api/tasks/${task._id}`, {
-      currentstatus: currentstatus,
-    });
-  };
+
  
 
   const [hours, setHours] = useState(

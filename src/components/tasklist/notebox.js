@@ -1,17 +1,10 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState} from "react";
 import Button from "react-bootstrap/Button";
-import axios from "axios";
-import { userContext } from "../../App";
 
 const Notebox = (props) => {
   const [task, setTasks] = useState(props.taskdata);
   const [disable, setDisable] = useState(props.disable);
-  const [, , setNotification] = useContext(userContext);
 
-
-  const deleteTask = async (id) => {
-    axios.delete(`/api/tasks/${id}`).then(console.log(Error));
-  };
   
   return (
     <div className="note-box">

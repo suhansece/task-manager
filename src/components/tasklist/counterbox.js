@@ -1,21 +1,14 @@
-import React, { useState, useContext, useEffect } from "react";
+import React, { useState} from "react";
 import Button from "react-bootstrap/Button";
-import axios from "axios";
-import { userContext } from "../../App";
 
 const Counterbox = (props) => {
   const [task, setTasks] = useState(props.taskdata);
-  const [, , setNotification] = useContext(userContext);
+  
 
   const [disable, setDisable] = useState(props.disable || false);
 
   const [count, setCount] = useState(Number(task.currentstatus) || 0);
 
-  const updateTask = async (currentstatus) => {
-    await axios.patch(`/api/tasks/${task._id}`, {
-      currentstatus: currentstatus,
-    });
-  };
   
   const changeCount = (c) => {
     if (c >= 0) {
