@@ -1,7 +1,6 @@
 {
   "name": "client",
   "version": "0.1.0",
-  "homepage": "https://suhansece.github.io/task-manager",
   "private": true,
   "proxy": "https://bus-tracking-server.onrender.com",
   "dependencies": {
