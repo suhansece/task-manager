@@ -2,6 +2,7 @@ import React, { useContext, useState } from "react";
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import axios from 'axios';
+
 import { useNavigate } from "react-router-dom";
 import { userContext } from "../App";
 
@@ -13,7 +14,7 @@ const Login=()=>{
     
     const onSubmit=async(e)=>{
         e.preventDefault();
-        const user=await axios.post('https://bus-tracking-server.onrender.com/api/user/login',{'email':email,'password':password});
+        const user=await axios.post('api/user/login',{'email':email,'password':password});
         setUserdetails(user.data);
         navigate('/');
         
