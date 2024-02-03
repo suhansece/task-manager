@@ -14,9 +14,14 @@ const Login=()=>{
     
     const onSubmit=async(e)=>{
         e.preventDefault();
-        const user=await axios.post('api/user/login',{'email':email,'password':password});
-        setUserdetails(user.data);
-        navigate('/');
+        try{
+            const user=await axios.post('api/user/login',{'email':email,'password':password});
+            setUserdetails(user.data);
+            navigate('/');
+        }catch(e){
+            console.log(e);
+        }
+       
         
     }
     return(
