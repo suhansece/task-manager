@@ -16,7 +16,7 @@ const Home = () => {
 
   const fetchTask = async () => {
     try {
-      const response = await axios.get("/api/tasks");
+      const response = await axios.get("api/tasks");
       setTask(response.data);
       console.log("fetch")
     } catch (error) {
