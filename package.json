@@ -2,7 +2,7 @@
   "name": "client",
   "version": "0.1.0",
   "private": true,
-  "proxy":"https://bus-tracking-server.onrender.com/",
+  "proxy": "https://bus-tracking-server.onrender.com/",
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.5",
     "@testing-library/jest-dom": "^5.17.0",
@@ -53,6 +53,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "gh-pages": "^6.1.1"
+    "gh-pages": "^6.1.1",
+    "http-proxy-middleware": "^2.0.6"
   }
 }

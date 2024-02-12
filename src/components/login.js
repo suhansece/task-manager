@@ -15,7 +15,9 @@ const Login=()=>{
     const onSubmit=async(e)=>{
         e.preventDefault();
         try{
-            const user=await axios.post('https://bus-tracking-server.onrender.com/api/user/login',{'email':email,'password':password});
+            const user=await axios.post('api/user/login',{'email':email,'password':password}, {
+                withCredentials: true // Include credentials (cookies) with the request
+            });
             setUserdetails(user.data);
             navigate('/');
         }catch(e){
